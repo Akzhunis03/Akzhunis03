@@ -1,0 +1,350 @@
+:root {
+    --clr-soft-cyan: #a5f3eb;
+    --clr-strong-cyan: #10d5c2;
+    --clr-light-grayish-red: #feece7;
+    --clr-light-red: #ff8c66;
+    --clr-pale-blue: #bdccff;
+    --clr-light-grayish-blue-toggle-background: #cdd7ee;
+    --clr-very-pale-blue: #fafbff;
+    --clr-grayish-blue: #858fad;
+    --clr-dark-desaturated-blue: #293356;
+    --clr-light-grayish-blue-empty-slider: #eaeefb;
+    --clr-white: white;
+  }
+  
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  /* Remove default margin */
+  body,h1,h2, h3, h4, p, figure, blockquote, dl, dd {
+    margin: 0;
+  }
+  
+  /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+  ul[role=list],
+  ol[role=list] {
+    list-style: none;
+  }
+  
+  /* Set core root defaults */
+  html:focus-within {
+    scroll-behavior: smooth;
+  }
+  
+  /* Set core body defaults */
+  body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+  }
+  
+  /* A elements that don't have a class get default styles */
+  a:not([class]) {
+    text-decoration-skip-ink: auto;
+  }
+  
+  /* Make images easier to work with */
+  img,
+  picture {
+    display: block;
+    max-width: 100%;
+  }
+  
+  /* Inherit fonts for inputs and buttons */
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+  
+  /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+  body {
+    font-family: "Manrope", sans-serif;
+    color: var(--clr-grayish-blue);
+    background-color: var(--clr-very-pale-blue);
+  }
+  
+  .l-cont {
+    min-height: 100vh;
+    padding: 5rem 1rem 1rem 1rem;
+    overflow: hidden;
+    background: url(images/pattern-circles.svg) no-repeat top 7% center, url(images/bg-pattern.svg) no-repeat;
+  }
+  @media screen and (min-width: 600px) {
+    .l-container {
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+  }
+  
+  .header {
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+  @media screen and (min-width: 600px) {
+    .header {
+      margin-bottom: 5rem;
+    }
+  }
+  .header__heading {
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--clr-dark-desaturated-blue);
+    letter-spacing: 0.3px;
+  }
+  @media screen and (min-width: 600px) {
+    .header__heading {
+      font-size: 1.75rem;
+    }
+  }
+  .header__lead {
+    margin-inline: auto;
+    max-width: 22ch;
+    font-size: 1rem;
+    letter-spacing: 0.3px;
+  }
+  @media screen and (min-width: 600px) {
+    .header__lead {
+      max-width: 100%;
+    }
+  }
+  
+  .G1 {
+    display: inline-block;
+  }
+  .toggle__input {
+    display: none;
+  }
+  .GG {
+    position: relative;
+    width: 42px;
+    height: 22px;
+    background-color: var(--clr-light-grayish-blue-toggle-background);
+    border-radius: 11px;
+    transition: background-color 0.2s;
+  }
+  .GG::after {
+    position: absolute;
+    top: 3px;
+    left: 4px;
+    width: 15px;
+    height: 15px;
+    content: "";
+    background-color: var(--clr-white);
+    border-radius: 50%;
+    transition: transform 0.2s;
+  }
+  .toggle__input:checked ~ .GG {
+    background-color: var(--clr-strong-cyan);
+  }
+  .toggle__input:checked ~ .GG::after {
+    transform: translateX(19px);
+  }
+  
+  .card {
+    width: 100%;
+    padding: 2.8rem 2rem 1.5rem 2rem;
+    background-color: var(--clr-white);
+    border-radius: 10px;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.07);
+  }
+  @media screen and (min-width: 600px) {
+    .card {
+      max-width: 540px;
+      padding: 2rem 2.8rem;
+      margin: 0 auto;
+    }
+  }
+  .card__content {
+    border-bottom: 2px solid black;
+  }
+  .card__top .slcon {
+    width: 100%;
+    margin: 2rem auto;
+  }
+  .card__top .slcon .slider {
+    width: 100%;
+    background: transparent;
+    appearance: none;
+  }
+  .card__top .slcon .slider::-moz-range-track {
+    height: 10px;
+    background-color: var(--clr-light-grayish-blue-empty-slider);
+    border-radius: 1rem;
+  }
+  .card__top .slcon .slider::-moz-range-thumb {
+    appearance: none;
+    width: 45px;
+    height: 45px;
+    cursor: grab;
+    background: var(--clr-strong-cyan) url(images/icon-slider.svg) no-repeat center center;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 10px 30px var(--clr-soft-cyan);
+    transition: background-color 0.2s ease;
+  }
+  .card__top .slcon .slider::-moz-range-thumb:active {
+    background-color: var(--clr-strong-cyan);
+  }
+  .card__top .slcon .slider::-moz-range-progress {
+    height: 10px;
+    background-color: var(--clr-soft-cyan);
+    border-radius: 1rem;
+  }
+  .card__top .slcon .slider::-webkit-slider-thumb {
+    width: 45px;
+    height: 45px;
+    margin-top: -17px;
+    cursor: grab;
+    background: var(--clr-strong-cyan) url(images/icon-slider.svg) no-repeat center center;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 10px 30px var(--clr-soft-cyan);
+    transition: background-color 0.2s ease;
+    appearance: none;
+  }
+  .card__top .slcon .slider::-webkit-slider-runnable-track {
+    height: 10px;
+    background-color: var(--clr-light-grayish-blue-empty-slider);
+    border-radius: 1rem;
+  }
+  @media screen and (min-width: 600px) {
+    .card__top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+  .card__views {
+    font-size: 0.8125rem;
+    font-weight: 800;
+    text-align: center;
+    letter-spacing: 1px;
+  }
+  @media screen and (min-width: 600px) {
+    .card__views {
+      order: -2;
+      font-size: 0.9375rem;
+    }
+  }
+  .card__prices {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+  }
+  @media screen and (min-width: 600px) {
+    .card__prices {
+      order: -1;
+    }
+  }
+  .card .price {
+    font-size:40px;
+    font-weight: 800px;
+    color: var(--clr-dark-desaturated-blue);
+  }
+  @media screen and (min-width: 600px) {
+    .card .price {
+      font-size: 2.5rem;
+    }
+  }
+  .card .sub {
+    font-size: 1rem;
+  }
+  .card__billing {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    margin: 2.5rem auto;
+  }
+  @media screen and (min-width: 600px) {
+    .card__billing {
+      margin-top: 1rem;
+    }
+  }
+  .card__billing-monthly, .card__billing-yearly {
+    font-size: 0.8rem;
+  }
+  @media screen and (min-width: 600px) {
+    .card__billing-monthly, .card__billing-yearly {
+      font-size: 0.85rem;
+    }
+  }
+  .card__billing-yearly {
+    position: relative;
+  }
+  .card__billing-yearly::after {
+    position: absolute;
+    padding: 0.2rem 0.5rem;
+    margin-left: 0.5em;
+    font-size: 0.8em;
+    font-weight: 800;
+    color: var(--clr-light-red);
+    text-align: center;
+    content: "-25%";
+    background: var(--clr-light-grayish-red);
+    border-radius: 11px;
+  }
+  @media screen and (min-width: 600px) {
+    .card__billing-yearly::after {
+      width: max-content;
+      content: "25% discount";
+    }
+  }
+  .card__footer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0.5rem;
+    font-size: 0.9rem;
+  }
+  @media screen and (min-width: 600px) {
+    .card__footer {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+  .card__footer::before {
+    position: absolute;
+    top: 0;
+    left: -12%;
+    width: 124%;
+    height: 1%;
+    content: "";
+    background-color: #f1f5fe;
+  }
+  .card__benefits {
+    padding: 1rem 0;
+    margin: 0;
+  }
+  .card .item {
+    margin: 0.8rem 0;
+  }
+  .card .item__img {
+    display: initial;
+    margin-right: 0.5rem;
+  }
+  @media screen and (min-width: 600px) {
+    .card .item {
+      font-size: 0.85rem;
+    }
+  }
+  .card__link-btn {
+    display: inline-block;
+    padding: 0.75rem 2.75rem;
+    color: var(--clr-pale-blue);
+    text-decoration: none;
+    background-color: var(--clr-dark-desaturated-blue);
+    border-radius: 1.5rem;
+  }
+  

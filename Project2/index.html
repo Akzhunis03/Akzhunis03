@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon-32x32.png"
+    />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <title>AKZHUNIS BULBUL | Interactive pricing component</title>
+  </head>
+  <body>
+    <main class="l-cont">
+      <header class="header">
+        <h1 class="header__heading">Simple, traffic-based pricing</h1>
+        <p class="header__lead">
+          Sign-up for our 30-day trial. No credit card required
+        </p>
+      </header>
+
+      <section class="card">
+        <div class="card__top">
+          <p class="card__views">
+            <span class="view-count js-view-count">100K</span> PAGEVIEWS
+          </p>
+
+          <div class="slcon">
+            <input
+              type="range"
+              class="slider sliderjs"
+              min="0"
+              max="4"
+              value="2"
+            />
+          </div>
+
+          <div class="card__prices">
+            <span class="price pricejs">$16.00</span
+            ><span class="sub subjs">/ month</span>
+          </div>
+        </div>
+
+        <div class="card__billing">
+          <p class="card__billing-monthly">Monthly Billing</p>
+
+          <label for="billing-toggle" class="G1">
+            <input
+              class="G2 switchjs"
+              type="checkbox"
+              name="billing-type"
+              id="GG"
+            />
+            <div class="GG"></div>
+          </label>
+
+          <p class="card__billing-yearly">Yearly Billing</p>
+        </div>
+
+        <div class="card__footer">
+          <ul class="card__benefits" role="list">
+            <li class="item">
+              <img class="item__img" src="images/icon-check.svg" alt="" />
+              <label class="item__label">Unlimited websites</label>
+            </li>
+            <li class="item">
+              <img class="item__img" src="images/icon-check.svg" alt="" />
+              <label class="item__label">100% data ownership</label>
+            </li>
+            <li class="item">
+              <img class="item__img" src="images/icon-check.svg" alt="" />
+              <label class="item__label">Email reports</label>
+            </li>
+          </ul>
+          <a href="#" class="card__link-btn">Start my trial</a>
+        </div>
+      </section>
+    </main>
+    <script src="js.js"></script>
+  </body>
+</html>
