@@ -1,0 +1,141 @@
+.app {
+	width: 100%;
+	min-height: 100vh;
+
+	background: url('../image/bg-image.png') left/cover no-repeat;
+
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+
+	padding: 0 6%;
+}
+
+.app > .logo-wrap .logo {
+	margin-top: 20px;
+}
+
+.app > .sign-up-form {
+	align-self: flex-end;
+
+	padding: 36px;
+	padding-bottom: 30px;
+	margin-bottom: 40px;
+
+	width: max-content;
+	max-width: 90%;
+
+	border-radius: 40px;
+	background-color: rgba(255, 255, 255, 0.75);
+
+	display: flex;
+	flex-direction: column;
+}
+
+.sign-up-form > .welcome {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.sign-up-form > .welcome .link {
+	color: var(--primary-color) !important;
+	text-decoration: none;
+}
+
+.sign-up-form > .welcome > .welcome-text {
+	font-size: 1.25rem;
+}
+
+.sign-up-form > .welcome > .to-login {
+	display: flex;
+	flex-direction: column;
+
+	font-weight: 400;
+	font-size: 0.8rem;
+	color: #8d8d8d;
+}
+
+.sign-up-form > .title {
+	font-size: 2.4rem;
+}
+
+.sign-up-form .inputs {
+	margin-top: 20px;
+
+	display: grid;
+	grid-template-rows: repeat(4, auto);
+	grid-template-columns: 100%;
+	gap: 20px;
+}
+
+.sign-up-form .inputs input {
+	padding: 12px;
+
+	outline: none;
+	border: 1px solid #adadad;
+	border-radius: 8px;
+	background-color: #fff;
+
+	font-weight: 300;
+	font-size: 0.85rem;
+	color: #808080;
+
+	transition: border 0.4s ease;
+}
+
+.sign-up-form .inputs input:focus,
+.sign-up-form .inputs input:hover {
+	border-color: #4285f4;
+}
+
+.sign-up-form .inputs label {
+	font-weight: 400;
+}
+
+.sign-up-form .inputs .input-wrap {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+
+.sign-up-form .inputs .user-info {
+	display: grid;
+	grid-template-rows: 1fr;
+	grid-template-columns: repeat(2, 50%);
+	gap: 10px;
+}
+
+.sign-up-form .inputs .submit {
+	margin: 30px 0;
+
+	display: flex;
+	justify-content: flex-end;
+}
+
+.sign-up-form .inputs .submit input {
+	font-weight: 500;
+	font-size: 1rem;
+	color: #fff;
+
+	padding: 10px 12%;
+
+	background-color: var(--primary-color);
+	box-shadow: 0 4px 20px rgba(119, 147, 65, 0.3);
+
+	cursor: pointer;
+	transition: background-color 0.4s ease;
+}
+
+.sign-up-form .inputs .submit input:focus,
+.sign-up-form .inputs .submit input:hover {
+	border-color: #adadad;
+	background-color: #9ac645;
+}
+
+/* responsive */
+@media screen and (max-width: 585px) {
+	.app > .sign-up-form {
+		align-self: center;
+	}
+}
